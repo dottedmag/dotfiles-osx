@@ -1,3 +1,1 @@
-#!/bin/sh -e
-
-exec /Applications/Emacs.app/Contents/MacOS/Emacs "$@"
+/Applications/Emacs.app/Contents/MacOS/Emacs-10.7
