@@ -1,0 +1,21 @@
+#!/bin/sh
+
+if [ $# -ne 1 ]; then
+  echo "Usage: runiterm <dir>"
+  exit 1
+fi
+
+WD="$1"
+
+osascript 2>/dev/null <<EOF
+tell application "iTerm"
+       set myterm to (make new terminal)
+       tell myterm
+               activate current session
+               launch session "Default Session"
+               tell the last session
+                       write text "cd $WD; clear"
+               end tell
+       end tell
+end tell
+EOF
