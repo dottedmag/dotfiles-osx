@@ -1,0 +1,6 @@
+#!/bin/sh
+if [ "$1" = "-R" ]; then
+  exec /bin/date '+%a, %d %b %Y %T %z'
+else
+  exec /bin/date "$@"
+fi
