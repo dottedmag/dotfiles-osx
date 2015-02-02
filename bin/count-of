@@ -1,6 +1,8 @@
 #!/usr/bin/python
 
-import csv
+import csv,sys
+
+do_print = len(sys.argv) > 1 and sys.argv[1] == 'print'
 
 nprojects = 0
 nactions = 0
@@ -24,9 +26,12 @@ def action(l):
     project = l[3]
     if project in actions_ignored_in:
         return
-    if ctx in ('<self', 'Delegated', '<Snake mail', '<Snake mail (eBay)'):
+    if ctx in ('<self', 'Delegated', '<Snake mail', '<Snake mail (eBay)',
+               '<Natalia', '<Government'):
         return
     nactions += 1
+    if do_print:
+        print '   '.join(l[2:5])
 
 with open('OmniFocus.csv', 'rb') as fh:
     r = csv.reader(fh)
