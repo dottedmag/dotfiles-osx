@@ -1,0 +1,44 @@
+#!/usr/bin/python
+
+import csv
+
+nprojects = 0
+nactions = 0
+
+ignored_prjs = ('@Periodic tasks', '@Single tasks',
+                '@Periodic Tasks', '@Single Tasks',
+                '@Someday/Maybe', 'Miscellaneous', 'Groceries')
+
+def project(l):
+    global nprojects
+    name = l[2]
+    if name in ignored_prjs:
+        return
+    nprojects += 1
+
+actions_ignored_in = ('@Periodic tasks', '@Periodic Tasks', '@Someday/Maybe')
+
+def action(l):
+    global nactions
+    ctx = l[4]
+    project = l[3]
+    if project in actions_ignored_in:
+        return
+    if ctx in ('<self', 'Delegated', '<Snake mail', '<Snake mail (eBay)'):
+        return
+    nactions += 1
+
+with open('OmniFocus.csv', 'rb') as fh:
+    r = csv.reader(fh)
+    line = r.next()
+    if line[0] != 'Task ID':
+        raise RuntimeError('Malformed header, expected "Task ID" at beginning')
+    for line in r:
+        if line[1] == 'Project':
+            project(line)
+        elif line[1] == 'Action':
+            action(line)
+        else:
+            raise RuntimeError('Unexpected type: '+line[1])
+
+print "Projects: %s. Actions: %s" % (nprojects, nactions)
