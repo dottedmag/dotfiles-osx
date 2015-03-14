@@ -22,8 +22,8 @@ actions_ignored_in = ('@Periodic tasks', '@Periodic Tasks', '@Someday/Maybe')
 
 def action(l):
     global nactions
-    ctx = l[4]
-    project = l[3]
+    ctx = l[5]
+    project = l[4]
     if project in actions_ignored_in:
         return
     if ctx in ('<self', 'Delegated', '<Snake mail', '<Snake mail (eBay)',
