@@ -1,6 +1,6 @@
-set mainfont {{Lucida Grande} 9}
-set textfont {Monaco 9}
-set uifont {{Lucida Grande} 9 bold}
+set mainfont {{Lucida Grande} 11}
+set textfont {{Courier New} 13}
+set uifont {{Lucida Grande} 11}
 set tabstop 8
 set findmergefiles 0
 set maxgraphpct 50
@@ -51,12 +51,12 @@ set indexcirclecolor green
 set circlecolors {white blue gray blue blue}
 set linkfgcolor blue
 set circleoutlinecolor black
-set geometry(main) 1499x1395+877+23
+set geometry(main) 1595x1394+44+24
 set geometry(state) normal
-set geometry(topwidth) 1499
-set geometry(topheight) 763
-set geometry(pwsash0) "417 1"
-set geometry(pwsash1) "629 1"
-set geometry(botwidth) 522
-set geometry(botheight) 627
+set geometry(topwidth) 1595
+set geometry(topheight) 750
+set geometry(pwsash0) "676 1"
+set geometry(pwsash1) "808 1"
+set geometry(botwidth) 965
+set geometry(botheight) 639
 set permviews {}
