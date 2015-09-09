@@ -11,4 +11,18 @@
                 Option::KEYTOKEY_AFTER_KEYUP, KeyCode::VK_CHANGE_INPUTSOURCE_DVORAK, KeyCode::VK_WAIT_10MS,
             </autogen>
         </item>
+        <item>
+          <name>Change Command+Tab to Command+Control+Option+Shift+Tab</name>
+          <identifier>remap.change_command_tab_to_ccos_tab</identifier>
+          <autogen>
+            __KeyToKey__
+            KeyCode::TAB, ModifierFlag::COMMAND_L,
+            KeyCode::TAB, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::CONTROL_L
+          </autogen>
+          <autogen>
+            __KeyToKey__
+            KeyCode::TAB, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L,
+            KeyCode::TAB, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L | ModifierFlag::OPTION_L | ModifierFlag::CONTROL_L
+          </autogen>
+        </item>
 </root>
