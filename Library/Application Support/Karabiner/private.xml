@@ -20,6 +20,10 @@
     <name>KeyCode::VK_OPEN_URL_Skype</name>
     <url type="file">/Applications/Skype.app</url>
   </vkopenurldef>
+  <vkopenurldef>
+    <name>KeyCode::VK_OPEN_URL_Slack</name>
+    <url type="file">/Applications/Slack.app</url>
+  </vkopenurldef>
   <item>
     <name>Switch to Emacs</name>
     <identifier>switch.emacs</identifier>
@@ -63,6 +67,15 @@
       __KeyToKey__
       KeyCode::SEMICOLON, ModifierFlag::COMMAND_L | ModifierFlag::CONTROL_L,
       KeyCode::VK_OPEN_URL_Skype
+    </autogen>
+  </item>
+  <item>
+    <name>Switch to Slack</name>
+    <identifier>switch.slack</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::P, ModifierFlag::COMMAND_L | ModifierFlag::CONTROL_L,
+      KeyCode::VK_OPEN_URL_Slack
     </autogen>
   </item>
   <item>
