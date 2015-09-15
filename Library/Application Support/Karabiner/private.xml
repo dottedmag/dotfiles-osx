@@ -4,26 +4,6 @@
     <name>KeyCode::VK_OPEN_URL_Emacs</name>
     <url type="file">/Applications/Emacs.app</url>
   </vkopenurldef>
-  <vkopenurldef>
-    <name>KeyCode::VK_OPEN_URL_iTerm</name>
-    <url type="file">/Applications/iTerm.app</url>
-  </vkopenurldef>
-  <vkopenurldef>
-    <name>KeyCode::VK_OPEN_URL_Chrome</name>
-    <url type="file">/Applications/Google Chrome.app</url>
-  </vkopenurldef>
-  <vkopenurldef>
-    <name>KeyCode::VK_OPEN_URL_OmniFocus</name>
-    <url type="file">/Applications/OmniFocus.app</url>
-  </vkopenurldef>
-  <vkopenurldef>
-    <name>KeyCode::VK_OPEN_URL_Skype</name>
-    <url type="file">/Applications/Skype.app</url>
-  </vkopenurldef>
-  <vkopenurldef>
-    <name>KeyCode::VK_OPEN_URL_Slack</name>
-    <url type="file">/Applications/Slack.app</url>
-  </vkopenurldef>
   <item>
     <name>Switch to Emacs</name>
     <identifier>switch.emacs</identifier>
@@ -33,6 +13,10 @@
       KeyCode::VK_OPEN_URL_Emacs
     </autogen>
   </item>
+  <vkopenurldef>
+    <name>KeyCode::VK_OPEN_URL_iTerm</name>
+    <url type="file">/Applications/iTerm.app</url>
+  </vkopenurldef>
   <item>
     <name>Switch to iTerm</name>
     <identifier>switch.iterm</identifier>
@@ -42,6 +26,10 @@
       KeyCode::VK_OPEN_URL_iTerm
     </autogen>
   </item>
+  <vkopenurldef>
+    <name>KeyCode::VK_OPEN_URL_Chrome</name>
+    <url type="file">/Applications/Google Chrome.app</url>
+  </vkopenurldef>
   <item>
     <name>Switch to Chrome</name>
     <identifier>switch.chrome</identifier>
@@ -51,6 +39,10 @@
       KeyCode::VK_OPEN_URL_Chrome
     </autogen>
   </item>
+  <vkopenurldef>
+    <name>KeyCode::VK_OPEN_URL_OmniFocus</name>
+    <url type="file">/Applications/OmniFocus.app</url>
+  </vkopenurldef>
   <item>
     <name>Switch to OmniFocus</name>
     <identifier>switch.of</identifier>
@@ -60,6 +52,10 @@
       KeyCode::VK_OPEN_URL_OmniFocus
     </autogen>
   </item>
+  <vkopenurldef>
+    <name>KeyCode::VK_OPEN_URL_Skype</name>
+    <url type="file">/Applications/Skype.app</url>
+  </vkopenurldef>
   <item>
     <name>Switch to Skype</name>
     <identifier>switch.skype</identifier>
@@ -69,6 +65,10 @@
       KeyCode::VK_OPEN_URL_Skype
     </autogen>
   </item>
+  <vkopenurldef>
+    <name>KeyCode::VK_OPEN_URL_Slack</name>
+    <url type="file">/Applications/Slack.app</url>
+  </vkopenurldef>
   <item>
     <name>Switch to Slack</name>
     <identifier>switch.slack</identifier>
@@ -79,28 +79,28 @@
     </autogen>
   </item>
   <item>
-            <name>Change input source to Russian while you are holding down right Cmd key.</name>
-            <identifier>remap.change_input_source_temporary_russian_cmd_r</identifier>
-            <autogen>
-                __KeyToKey__
-                KeyCode::COMMAND_R,
-                KeyCode::VK_NONE,
-                Option::KEYTOKEY_BEFORE_KEYDOWN, KeyCode::VK_CHANGE_INPUTSOURCE_RUSSIAN, KeyCode::VK_WAIT_10MS,
-                Option::KEYTOKEY_AFTER_KEYUP, KeyCode::VK_CHANGE_INPUTSOURCE_DVORAK, KeyCode::VK_WAIT_10MS,
-            </autogen>
-        </item>
-        <item>
-          <name>Change Command+Tab to Command+Control+Option+Shift+Tab</name>
-          <identifier>remap.change_command_tab_to_ccos_tab</identifier>
-          <autogen>
-            __KeyToKey__
-            KeyCode::TAB, ModifierFlag::COMMAND_L,
-            KeyCode::TAB, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::CONTROL_L
-          </autogen>
-          <autogen>
-            __KeyToKey__
-            KeyCode::TAB, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L,
-            KeyCode::TAB, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L | ModifierFlag::OPTION_L | ModifierFlag::CONTROL_L
-          </autogen>
-        </item>
+    <name>Change input source to Russian while you are holding down right Cmd key.</name>
+    <identifier>remap.change_input_source_temporary_russian_cmd_r</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::COMMAND_R,
+      KeyCode::VK_NONE,
+      Option::KEYTOKEY_BEFORE_KEYDOWN, KeyCode::VK_CHANGE_INPUTSOURCE_RUSSIAN, KeyCode::VK_WAIT_10MS,
+      Option::KEYTOKEY_AFTER_KEYUP, KeyCode::VK_CHANGE_INPUTSOURCE_DVORAK, KeyCode::VK_WAIT_10MS,
+    </autogen>
+  </item>
+  <item>
+    <name>Change Command+Tab to Command+Control+Option+Shift+Tab</name>
+    <identifier>remap.change_command_tab_to_ccos_tab</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::TAB, ModifierFlag::COMMAND_L,
+      KeyCode::TAB, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::CONTROL_L
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::TAB, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L,
+      KeyCode::TAB, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L | ModifierFlag::OPTION_L | ModifierFlag::CONTROL_L
+    </autogen>
+  </item>
 </root>
