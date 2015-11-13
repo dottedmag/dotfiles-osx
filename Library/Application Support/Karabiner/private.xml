@@ -79,6 +79,19 @@
     </autogen>
   </item>
   <vkopenurldef>
+    <name>KeyCode::VK_OPEN_URL_Airmail</name>
+    <url type="file">/Applications/AirmailBeta.app</url>
+  </vkopenurldef>
+  <item>
+    <name>Switch to Airmail</name>
+    <identifier>switch.airmail</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::A, ModifierFlag::COMMAND_L | ModifierFlag::CONTROL_L,
+      KeyCode::VK_OPEN_URL_Airmail
+    </autogen>
+  </item>
+  <vkopenurldef>
     <name>KeyCode::VK_OPEN_URL_iTermWindow</name>
     <url type="shell">$HOME/bin/newiterm</url>
   </vkopenurldef>
