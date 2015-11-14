@@ -118,6 +118,19 @@
     </autogen>
   </item>
   <vkopenurldef>
+    <name>KeyCode::VK_OPEN_URL_Calendar</name>
+    <url type="file">/Applications/Calendar.app</url>
+  </vkopenurldef>
+  <item>
+    <name>Switch to Calendar</name>
+    <identifier>switch.calendar</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::H, ModifierFlag::COMMAND_L | ModifierFlag::CONTROL_L,
+      KeyCode::VK_OPEN_URL_Calendar
+    </autogen>
+  </item>
+  <vkopenurldef>
     <name>KeyCode::VK_OPEN_URL_iTermWindow</name>
     <url type="shell">$HOME/bin/newiterm</url>
   </vkopenurldef>
