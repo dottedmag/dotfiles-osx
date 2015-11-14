@@ -92,6 +92,32 @@
     </autogen>
   </item>
   <vkopenurldef>
+    <name>KeyCode::VK_OPEN_URL_Textual</name>
+    <url type="file">/Applications/Textual.app</url>
+  </vkopenurldef>
+  <item>
+    <name>Switch to Textual</name>
+    <identifier>switch.textual</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::G, ModifierFlag::COMMAND_L | ModifierFlag::CONTROL_L,
+      KeyCode::VK_OPEN_URL_Textual
+    </autogen>
+  </item>
+  <vkopenurldef>
+    <name>KeyCode::VK_OPEN_URL_Finder</name>
+    <url type="file">/System/Library/CoreServices/Finder.app</url>
+  </vkopenurldef>
+  <item>
+    <name>Switch to Finder</name>
+    <identifier>switch.finder</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::Y, ModifierFlag::COMMAND_L | ModifierFlag::CONTROL_L,
+      KeyCode::VK_OPEN_URL_Finder
+    </autogen>
+  </item>
+  <vkopenurldef>
     <name>KeyCode::VK_OPEN_URL_iTermWindow</name>
     <url type="shell">$HOME/bin/newiterm</url>
   </vkopenurldef>
