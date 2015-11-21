@@ -80,7 +80,7 @@
   </item>
   <vkopenurldef>
     <name>KeyCode::VK_OPEN_URL_Airmail</name>
-    <url type="file">/Applications/AirmailBeta.app</url>
+    <url type="file">/Applications/Airmail 2.app</url>
   </vkopenurldef>
   <item>
     <name>Switch to Airmail</name>
