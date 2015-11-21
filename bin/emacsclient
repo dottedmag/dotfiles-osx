@@ -1,3 +1,12 @@
 #!/bin/sh
 
-exec /Applications/Emacs.app/Contents/MacOS/bin-x86_64-10_9/emacsclient "$@"
+E1=/Applications/Emacs.app/Contents/MacOS/bin-x86_64-10_9/emacsclient
+E2=/Applications/Emacs.app/Contents/MacOS/bin/emacsclient
+
+if [ -f $E1 ]; then
+    E=$E1
+elif [ -f $E2 ]; then
+    E=$E2
+fi
+
+exec $E "$@"
