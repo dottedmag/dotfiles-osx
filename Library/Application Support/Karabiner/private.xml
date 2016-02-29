@@ -79,16 +79,16 @@
     </autogen>
   </item>
   <vkopenurldef>
-    <name>KeyCode::VK_OPEN_URL_Airmail</name>
-    <url type="file">/Applications/Airmail 2.app</url>
+    <name>KeyCode::VK_OPEN_URL_MailMate</name>
+    <url type="file">/Applications/MailMate.app</url>
   </vkopenurldef>
   <item>
-    <name>Switch to Airmail</name>
-    <identifier>switch.airmail</identifier>
+    <name>Switch to MailMate</name>
+    <identifier>switch.mailmate</identifier>
     <autogen>
       __KeyToKey__
       KeyCode::A, ModifierFlag::COMMAND_L | ModifierFlag::CONTROL_L,
-      KeyCode::VK_OPEN_URL_Airmail
+      KeyCode::VK_OPEN_URL_MailMate
     </autogen>
   </item>
   <vkopenurldef>
