@@ -23,8 +23,9 @@ def do_send(filenames):
             sys.exit(1)
         tosend.append(filename)
 
-    if subprocess.call(['emate', 'mailto', '-t', DEST] + tosend) != 0:
-        sys.stderr.write('Unable to send e-mail to Kindle')
+    args = ['emate', 'mailto', '-t', DEST, '--send-now', '-s', 'bokz'] + tosend
+    if subprocess.call(args) != 0:
+        sys.stderr.write('Unable to send e-mail to Kindle\n')
 
 if __name__ == '__main__':
-    do_send(sys.argv)
+    do_send(sys.argv[1:])
