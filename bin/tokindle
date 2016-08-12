@@ -1,0 +1,30 @@
+#!/usr/bin/python
+"""
+Send .epub and .mobi books to my Kindle
+"""
+import sys, subprocess
+
+DEST = 'dottedmag@free.kindle.com'
+
+def do_send(filenames):
+    """
+    Convert and send files.
+    """
+    tosend = []
+
+    for filename in filenames:
+        if filename.endswith('.epub'):
+            if subprocess.call(['kindlegen', filename]) != 0:
+                sys.stderr.write('Unable to convert %s to Mobi\n' % filename)
+                sys.exit(1)
+            filename = filename[:-4]+'.mobi'
+        elif not filename.endswith('.mobi'):
+            sys.stderr.write('Don\'t know how to process %s\n' % filename)
+            sys.exit(1)
+        tosend.append(filename)
+
+    if subprocess.call(['emate', 'mailto', '-t', DEST] + tosend) != 0:
+        sys.stderr.write('Unable to send e-mail to Kindle')
+
+if __name__ == '__main__':
+    do_send(sys.argv)
