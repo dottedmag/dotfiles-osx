@@ -2,30 +2,45 @@
 """
 Send .epub and .mobi books to my Kindle
 """
-import sys, subprocess
+import sys, subprocess, os.path
 
 DEST = 'dottedmag@free.kindle.com'
 
-def do_send(filenames):
-    """
-    Convert and send files.
-    """
-    tosend = []
+def known_extension(f):
+    return f.endswith('.epub') or f.endswith('.mobi')
 
-    for filename in filenames:
-        if filename.endswith('.epub'):
-            if subprocess.call(['kindlegen', filename]) != 0:
-                sys.stderr.write('Unable to convert %s to Mobi\n' % filename)
-                sys.exit(1)
-            filename = filename[:-4]+'.mobi'
-        elif not filename.endswith('.mobi'):
-            sys.stderr.write('Don\'t know how to process %s\n' % filename)
+def do_check_type(filenames):
+    unknown = [f for f in filenames if not known_extension(f)]
+    if unknown:
+        sys.stderr.write('Don\'t know how to process files: %s\n'
+                         % ', '.join(unknown))
+        sys.exit(1)
+
+def convert_file(fnm):
+    if fnm.endswith('.epub'):
+        if subprocess.call(['kindlegen', fnm]) != 0:
+            sys.stderr.write('Unable to convert %s to Mobi\n' % fnm)
             sys.exit(1)
-        tosend.append(filename)
+        return fnm[:-4]+'.mobi'
+    return fnm
 
-    args = ['emate', 'mailto', '-t', DEST, '--send-now', '-s', 'bokz'] + tosend
-    if subprocess.call(args) != 0:
-        sys.stderr.write('Unable to send e-mail to Kindle\n')
+def do_check_presence(filenames):
+    missing = [f for f in filenames if not os.path.isfile(f)]
+    if missing:
+        sys.stderr.write('Cannot find files: %s\n' % ', '.join(missing))
+        sys.exit(1)
+
+def do_send(filenames):
+    for fnm in filenames:
+        args = ['emate', 'mailto', '-t', DEST, '--send-now', '-s', 'bokz', fnm]
+        if subprocess.call(args) != 0:
+            sys.stderr.write('Unable to send e-mail with %s to Kindle\n' % fnm)
+
+def main(filenames):
+    do_check_type(filenames)
+    filenames = [convert_file(f) for f in filenames]
+    do_check_presence(filenames)
+    do_send(filenames)
 
 if __name__ == '__main__':
-    do_send(sys.argv[1:])
+    main(sys.argv[1:])
