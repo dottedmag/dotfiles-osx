@@ -2,7 +2,7 @@
 """
 Send .epub and .mobi books to Kindle
 """
-import sys, subprocess, os.path, argparse
+import sys, subprocess, os.path, argparse, configparser
 
 def known_extension(f):
     return f.endswith('.epub') or f.endswith('.mobi')
@@ -39,14 +39,19 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('books', metavar='BOOK', nargs='+',
                         help='Books to send')
-    parser.add_argument('-t', '--to', help='Kindle address to send books to')
+    parser.add_argument('-t', '--to', metavar='ACCT',
+                        help='Kindle account to send books to')
     args = parser.parse_args()
+    config = configparser.ConfigParser()
+    config.read(os.path.expanduser("~/.tokindle/config"))
+    to = config.get('send', 'to', vars=vars(args), fallback=None)
     if not args.to:
-        args.to = 'dottedmag'
+        sys.stderr.write("Don't know where to send books to.\n")
+        sys.exit(2)
     check_type(args.books)
     filenames = [convert_file(f) for f in args.books]
-    check_presence(args.books)
-    send(args.to, args.books)
+    check_presence(filenames)
+    send(to, filenames)
 
 if __name__ == '__main__':
     main()
