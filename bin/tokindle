@@ -1,10 +1,8 @@
-#!/usr/bin/python
+#!/usr/bin/env python3
 """
-Send .epub and .mobi books to my Kindle
+Send .epub and .mobi books to Kindle
 """
-import sys, subprocess, os.path
-
-DEST = 'dottedmag@free.kindle.com'
+import sys, subprocess, os.path, argparse
 
 def known_extension(f):
     return f.endswith('.epub') or f.endswith('.mobi')
@@ -30,17 +28,25 @@ def check_presence(filenames):
         sys.stderr.write('Cannot find files: %s\n' % ', '.join(missing))
         sys.exit(1)
 
-def send(filenames):
+def send(dest, filenames):
+    email = dest+'@free.kindle.com'
     for fnm in filenames:
-        args = ['emate', 'mailto', '-t', DEST, '--send-now', '-s', 'bokz', fnm]
+        args = ['emate', 'mailto', '-t', email, '--send-now', '-s', 'bokz', fnm]
         if subprocess.call(args) != 0:
             sys.stderr.write('Unable to send e-mail with %s to Kindle\n' % fnm)
 
-def main(filenames):
-    check_type(filenames)
-    filenames = [convert_file(f) for f in filenames]
-    check_presence(filenames)
-    send(filenames)
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('books', metavar='BOOK', nargs='+',
+                        help='Books to send')
+    parser.add_argument('-t', '--to', help='Kindle address to send books to')
+    args = parser.parse_args()
+    if not args.to:
+        args.to = 'dottedmag'
+    check_type(args.books)
+    filenames = [convert_file(f) for f in args.books]
+    check_presence(args.books)
+    send(args.to, args.books)
 
 if __name__ == '__main__':
-    main(sys.argv[1:])
+    main()
