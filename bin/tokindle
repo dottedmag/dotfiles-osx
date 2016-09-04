@@ -45,8 +45,8 @@ def main():
         args.to = 'dottedmag'
     check_type(args.books)
     filenames = [convert_file(f) for f in args.books]
-    check_presence(args.books)
-    send(args.to, args.books)
+    check_presence(filenames)
+    send(args.to, filenames)
 
 if __name__ == '__main__':
     main()
