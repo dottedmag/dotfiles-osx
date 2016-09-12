@@ -19,7 +19,7 @@ def convert_file(fnm):
         if subprocess.call(['kindlegen', fnm]) != 0:
             sys.stderr.write('Unable to convert %s to Mobi\n' % fnm)
             sys.exit(1)
-        return fnm[:-4]+'.mobi'
+        return fnm[:-5]+'.mobi'
     return fnm
 
 def check_presence(filenames):
