@@ -5,7 +5,7 @@ Send .epub and .mobi books to Kindle
 import sys, subprocess, os.path, argparse, configparser
 
 def known_extension(f):
-    return f.endswith('.epub') or f.endswith('.mobi')
+    return f.endswith('.epub') or f.endswith('.mobi') or f.endswith('.txt')
 
 def check_type(filenames):
     unknown = [f for f in filenames if not known_extension(f)]
