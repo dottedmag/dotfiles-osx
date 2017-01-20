@@ -7,15 +7,13 @@ fi
 
 WD="$1"
 
-osascript 2>/dev/null <<EOF
+osascript <<EOF
 tell application "iTerm"
-       set myterm to (make new terminal)
-       tell myterm
-               activate current session
-               launch session "Default Session"
-               tell the last session
-                       write text "cd $WD; clear"
-               end tell
-       end tell
+  set w to (create window with default profile)
+  tell w
+    tell the current session
+      write text "cd \"$WD\"; clear"
+    end tell
+  end tell
 end tell
 EOF
