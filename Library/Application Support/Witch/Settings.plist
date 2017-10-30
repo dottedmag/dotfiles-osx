@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Action Configurations</key>
+	<array>
+		<dict>
+			<key>Action Type</key>
+			<integer>0</integer>
+			<key>Hot Key: Reverse</key>
+			<dict>
+				<key>Character</key>
+				<string></string>
+				<key>Key Code</key>
+				<string>48</string>
+				<key>Modifiers</key>
+				<string>1966379</string>
+				<key>Visual Representation</key>
+				<string>⌃⌥⇧⌘⇥</string>
+			</dict>
+			<key>Hot Key: Standard</key>
+			<dict>
+				<key>Character</key>
+				<string>	</string>
+				<key>Key Code</key>
+				<string>48</string>
+				<key>Modifiers</key>
+				<string>1835305</string>
+				<key>Visual Representation</key>
+				<string>⌃⌥⌘⇥</string>
+			</dict>
+			<key>Sort Order</key>
+			<integer>3</integer>
+			<key>Spaces</key>
+			<true/>
+			<key>Tabs</key>
+			<false/>
+			<key>Tabs: Mode</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>Activate Item</key>
+	<true/>
+	<key>Activate On No Modifiers</key>
+	<true/>
+	<key>Application Name Shadow</key>
+	<true/>
+	<key>Applications Sort Order</key>
+	<integer>3</integer>
+	<key>Auto-Enabled Once</key>
+	<true/>
+	<key>Cancel Item</key>
+	<false/>
+	<key>Cycle All Windows</key>
+	<dict>
+		<key>Backward</key>
+		<dict>
+			<key>Character</key>
+			<string></string>
+			<key>Key Code</key>
+			<string>48</string>
+			<key>Modifiers</key>
+			<string>1966379</string>
+			<key>Visual Representation</key>
+			<string>⌃⌥⇧⌘⇥</string>
+		</dict>
+		<key>Forward</key>
+		<dict>
+			<key>Character</key>
+			<string>	</string>
+			<key>Key Code</key>
+			<string>48</string>
+			<key>Modifiers</key>
+			<string>1835305</string>
+			<key>Visual Representation</key>
+			<string>⌃⌥⌘⇥</string>
+		</dict>
+	</dict>
+	<key>Cycle Apps &gt; Windows: Ignore Parent Orientation</key>
+	<true/>
+	<key>Icon Mode: Superimpose Application Icon</key>
+	<true/>
+	<key>Ignore Non-Standard Windows</key>
+	<true/>
+	<key>Initial Selection: Sorted By Activity: Skip Active Entry</key>
+	<true/>
+	<key>Invert Applications Sort Order</key>
+	<false/>
+	<key>Keep Cycling</key>
+	<true/>
+	<key>Last Daemon Hash</key>
+	<data>
+	L0eUtzu1OWtZ/8yYYAqUXLlR+00=
+	</data>
+	<key>Last Selected Tab</key>
+	<string>advanced</string>
+	<key>Last Tab</key>
+	<string>behavior</string>
+	<key>Show Application Names</key>
+	<true/>
+	<key>Show Previews</key>
+	<false/>
+	<key>Show Search Field</key>
+	<false/>
+	<key>Step Forward Initially</key>
+	<true/>
+	<key>Switch Across Spaces</key>
+	<true/>
+	<key>Window Exceptions</key>
+	<array>
+		<string>Format*Palet*</string>
+		<string> Transmission</string>
+	</array>
+	<key>Window Name Shadow</key>
+	<true/>
+</dict>
+</plist>
