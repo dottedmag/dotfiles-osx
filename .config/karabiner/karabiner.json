@@ -289,6 +289,30 @@
                             "to": {
                                 "key_code": "left_command"
                             }
+                        },
+                        {
+                            "from": {
+                                "key_code": "end"
+                            },
+                            "to": {
+                                "key_code": "page_up"
+                            }
+                        },
+                        {
+                            "from": {
+                                "key_code": "page_up"
+                            },
+                            "to": {
+                                "key_code": "page_down"
+                            }
+                        },
+                        {
+                            "from": {
+                                "key_code": "page_down"
+                            },
+                            "to": {
+                                "key_code": "end"
+                            }
                         }
                     ]
                 },
