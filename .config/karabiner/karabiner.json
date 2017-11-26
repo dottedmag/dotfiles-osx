@@ -234,7 +234,7 @@
                         "manipulators": [
                             {
                                 "from": {
-                                    "key_code": "j",
+                                    "key_code": "w",
                                     "modifiers": {
                                         "mandatory": [
                                             "left_command",
