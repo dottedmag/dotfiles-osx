@@ -1,0 +1,59 @@
+{
+  "title": "Cmd+Tab -> Cmd+Option+Ctrl+Tab (for Witch)",
+  "rules": [
+    {
+      "description": "Cmd+Tab -> Cmd+Option+Ctrl+Tab",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "tab",
+            "modifiers": {
+              "mandatory": [
+                "left_command"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "tab",
+              "modifiers": [
+                "left_command",
+                "left_option",
+                "left_control"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Shift+Cmd+Tab -> Shift+Cmd+Option+Ctrl+Tab",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "tab",
+            "modifiers": {
+              "mandatory": [
+                "left_command",
+                "left_shift"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "tab",
+              "modifiers": [
+                "left_command",
+                "left_option",
+                "left_control",
+                "left_shift"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

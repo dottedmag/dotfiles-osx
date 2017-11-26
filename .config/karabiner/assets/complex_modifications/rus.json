@@ -1,0 +1,35 @@
+{
+  "title": "Non-locking Russian input method",
+  "rules": [
+    {
+      "description": "Change input source to Russian while ROption is pressed",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "right_option",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "select_input_source": {
+                "language": "^ru$"
+              }
+            }
+          ],
+          "to_after_key_up": [
+            {
+              "select_input_source": {
+                "language": "^en$"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
