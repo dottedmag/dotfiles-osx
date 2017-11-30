@@ -2,12 +2,67 @@
   "title": "Non-locking Russian input method",
   "rules": [
     {
-      "description": "Change input source to Russian while ROption is pressed",
+      "description":
+        "Change input source to Russian while RAlt is pressed (PC keyboards)",
       "manipulators": [
         {
+          "conditions": [
+            {
+              "type": "device_if",
+              "identifiers": [
+                {
+                  "vendor_id": 1118,
+                  "product_id": 1957,
+                  "description": "Microsoft Sculpt Ergonomic Keyboard"
+                }
+              ]
+            }
+          ],
           "type": "basic",
           "from": {
             "key_code": "right_option",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "select_input_source": {
+                "language": "^ru$"
+              }
+            }
+          ],
+          "to_after_key_up": [
+            {
+              "select_input_source": {
+                "language": "^en$"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description":
+        "Change input source to Russian while RCmd is pressed (Mac keyboards)",
+      "manipulators": [
+        {
+          "conditions": [
+            {
+              "type": "device_if",
+              "identifiers": [
+                {
+                  "vendor_id": 1452,
+                  "description": "Apple keyboards"
+                }
+              ]
+            }
+          ],
+          "type": "basic",
+          "from": {
+            "key_code": "right_command",
             "modifiers": {
               "optional": [
                 "any"
