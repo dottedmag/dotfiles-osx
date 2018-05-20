@@ -29,8 +29,14 @@
 				<key>Visual Representation</key>
 				<string>⌃⌥⌘⇥</string>
 			</dict>
+			<key>Menu</key>
+			<false/>
+			<key>Orientation</key>
+			<integer>0</integer>
 			<key>Sort Order</key>
 			<integer>3</integer>
+			<key>Sort Order: Invert</key>
+			<false/>
 			<key>Spaces</key>
 			<true/>
 			<key>Tabs</key>
@@ -43,6 +49,10 @@
 	<true/>
 	<key>Activate On No Modifiers</key>
 	<true/>
+	<key>Application Exceptions</key>
+	<array>
+		<string>loginwindow</string>
+	</array>
 	<key>Application Name Shadow</key>
 	<true/>
 	<key>Applications Sort Order</key>
@@ -90,14 +100,18 @@
 	<true/>
 	<key>Last Daemon Hash</key>
 	<data>
-	L0eUtzu1OWtZ/8yYYAqUXLlR+00=
+	BDjVzt36MBBLAJVvv2YI3dMdo5A=
 	</data>
 	<key>Last Selected Tab</key>
-	<string>license</string>
+	<string>advanced</string>
 	<key>Last Tab</key>
 	<string>behavior</string>
+	<key>Panel Delay</key>
+	<integer>0</integer>
 	<key>Show Application Names</key>
 	<true/>
+	<key>Show Panel On Mouse Screen</key>
+	<integer>2</integer>
 	<key>Show Previews</key>
 	<false/>
 	<key>Show Search Field</key>
