@@ -100,7 +100,7 @@
 	<true/>
 	<key>Last Daemon Hash</key>
 	<data>
-	BDjVzt36MBBLAJVvv2YI3dMdo5A=
+	K9NYyKtxwsoeNBN6JnaIa7qd6+Q=
 	</data>
 	<key>Last Selected Tab</key>
 	<string>advanced</string>
@@ -108,7 +108,11 @@
 	<string>behavior</string>
 	<key>Panel Delay</key>
 	<integer>0</integer>
+	<key>Run Badge Script</key>
+	<true/>
 	<key>Show Application Names</key>
+	<true/>
+	<key>Show Minimized Bevels</key>
 	<true/>
 	<key>Show Panel On Mouse Screen</key>
 	<integer>2</integer>
@@ -119,6 +123,8 @@
 	<key>Step Forward Initially</key>
 	<true/>
 	<key>Switch Across Spaces</key>
+	<true/>
+	<key>Use Core Window Fallback: Use AppleScript</key>
 	<true/>
 	<key>Window Exceptions</key>
 	<array>
