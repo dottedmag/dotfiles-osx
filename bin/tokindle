@@ -44,8 +44,10 @@ def main():
     args = parser.parse_args()
     config = configparser.ConfigParser()
     config.read(os.path.expanduser("~/.tokindle/config"))
-    to = config.get('send', 'to', vars=vars(args), fallback=None)
-    if not args.to:
+    to = config.get('send', 'to', fallback=None)
+    if args.to is not None:
+        to = args.to
+    if not to:
         sys.stderr.write("Don't know where to send books to.\n")
         sys.exit(2)
     check_type(args.books)
