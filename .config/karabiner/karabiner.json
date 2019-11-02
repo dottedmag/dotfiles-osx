@@ -8,8 +8,11 @@
         {
             "complex_modifications": {
                 "parameters": {
+                    "basic.simultaneous_threshold_milliseconds": 50,
                     "basic.to_delayed_action_delay_milliseconds": 500,
-                    "basic.to_if_alone_timeout_milliseconds": 1000
+                    "basic.to_if_alone_timeout_milliseconds": 1000,
+                    "basic.to_if_held_down_threshold_milliseconds": 500,
+                    "mouse_motion_to_scroll.speed": 100
                 },
                 "rules": [
                     {
@@ -112,7 +115,7 @@
                         ]
                     },
                     {
-                        "description": "Activate Chrome",
+                        "description": "Activate Vivaldi",
                         "manipulators": [
                             {
                                 "from": {
@@ -126,7 +129,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "open -a 'Google Chrome'"
+                                        "shell_command": "open -a 'Vivaldi'"
                                     }
                                 ],
                                 "type": "basic"
@@ -231,6 +234,10 @@
                                             {
                                                 "description": "Apple keyboards",
                                                 "vendor_id": 1452
+                                            },
+                                            {
+                                                "description": "Also Apple keyboards",
+                                                "vendor_id": 76
                                             }
                                         ],
                                         "type": "device_if"
@@ -272,6 +279,11 @@
                                             {
                                                 "description": "Microsoft Sculpt Ergonomic Keyboard",
                                                 "product_id": 1957,
+                                                "vendor_id": 1118
+                                            },
+                                            {
+                                                "description": "Microsoft Sculpt Ergonomic Keyboard",
+                                                "product_id": 1977,
                                                 "vendor_id": 1118
                                             }
                                         ],
@@ -329,6 +341,14 @@
                         },
                         {
                             "from": {
+                                "key_code": "end"
+                            },
+                            "to": {
+                                "key_code": "page_up"
+                            }
+                        },
+                        {
+                            "from": {
                                 "key_code": "left_command"
                             },
                             "to": {
@@ -345,10 +365,10 @@
                         },
                         {
                             "from": {
-                                "key_code": "end"
+                                "key_code": "page_down"
                             },
                             "to": {
-                                "key_code": "page_up"
+                                "key_code": "end"
                             }
                         },
                         {
@@ -357,14 +377,6 @@
                             },
                             "to": {
                                 "key_code": "page_down"
-                            }
-                        },
-                        {
-                            "from": {
-                                "key_code": "page_down"
-                            },
-                            "to": {
-                                "key_code": "end"
                             }
                         }
                     ]
@@ -390,6 +402,152 @@
                             }
                         }
                     ]
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 50475,
+                        "vendor_id": 1133
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": false,
+                    "simple_modifications": []
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 615,
+                        "vendor_id": 1452
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": true,
+                    "simple_modifications": [
+                        {
+                            "from": {
+                                "key_code": "caps_lock"
+                            },
+                            "to": {
+                                "key_code": "left_control"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 615,
+                        "vendor_id": 76
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": true,
+                    "simple_modifications": [
+                        {
+                            "from": {
+                                "key_code": "caps_lock"
+                            },
+                            "to": {
+                                "key_code": "left_control"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 1977,
+                        "vendor_id": 1118
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": false,
+                    "simple_modifications": [
+                        {
+                            "from": {
+                                "key_code": "caps_lock"
+                            },
+                            "to": {
+                                "key_code": "left_control"
+                            }
+                        },
+                        {
+                            "from": {
+                                "key_code": "left_command"
+                            },
+                            "to": {
+                                "key_code": "left_option"
+                            }
+                        },
+                        {
+                            "from": {
+                                "key_code": "left_option"
+                            },
+                            "to": {
+                                "key_code": "left_command"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 2054,
+                        "vendor_id": 1118
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": false,
+                    "simple_modifications": [
+                        {
+                            "from": {
+                                "key_code": "caps_lock"
+                            },
+                            "to": {
+                                "key_code": "left_control"
+                            }
+                        },
+                        {
+                            "from": {
+                                "key_code": "left_command"
+                            },
+                            "to": {
+                                "key_code": "left_option"
+                            }
+                        },
+                        {
+                            "from": {
+                                "key_code": "left_option"
+                            },
+                            "to": {
+                                "key_code": "left_command"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": false,
+                        "is_pointing_device": true,
+                        "product_id": 58,
+                        "vendor_id": 1112
+                    },
+                    "ignore": true,
+                    "manipulate_caps_lock_led": false,
+                    "simple_modifications": []
                 }
             ],
             "fn_function_keys": [
@@ -491,11 +649,16 @@
                 }
             ],
             "name": "Default profile",
+            "parameters": {
+                "delay_milliseconds_before_open_device": 1000
+            },
             "selected": true,
             "simple_modifications": [],
             "virtual_hid_keyboard": {
                 "caps_lock_delay_milliseconds": 0,
-                "keyboard_type": "ansi"
+                "country_code": 0,
+                "keyboard_type": "ansi",
+                "mouse_key_xy_scale": 100
             }
         }
     ]
