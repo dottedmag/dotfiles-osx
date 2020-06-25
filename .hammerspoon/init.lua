@@ -1,7 +1,16 @@
 hs.window.animationDuration = 0
 
-local columns = 3
+local s = hs.screen.primaryScreen()
+local sg = s:frame()
+
+local columns = 2
 local rows = 2
+
+if sg.w > 4000 then
+   columns = 3
+end
+
+hs.alert.show("Started with "..columns.." columns")
 
 hs.grid.setGrid(hs.geometry(nil, nil, columns, rows))
 hs.grid.setMargins(hs.geometry(nil, nil, 0, 0))
