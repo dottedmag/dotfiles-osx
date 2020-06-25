@@ -59,7 +59,7 @@ end
 
 local function expand_down()
    hs.grid.adjustWindow(function(cell)
-         if cell.y+cell.w < columns then
+         if cell.y+cell.h < rows then
             cell.h = cell.h + 1
          end
    end)
